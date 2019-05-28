@@ -47,10 +47,10 @@
         
             $temp = explode(".", $_FILES["images"]["name"]);
             $fileToUpload =  $containerName.'.' . end($temp);
-            echo '<pre>';
+           
 
                 if (move_uploaded_file($_FILES['images']['tmp_name'], $fileToUpload)) {
-                    echo $fileToUpload;
+                    
                 } else {
                     echo "gagal";
                 }
@@ -76,6 +76,8 @@
 
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
