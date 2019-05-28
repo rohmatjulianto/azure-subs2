@@ -49,8 +49,6 @@
             $fileToUpload =  $containerName.'.' . end($temp);
             echo '<pre>';
             
-        if (move_uploaded_file($_FILES['images']['tmp_name'], $fileToUpload)) {
-            
             $myfile = fopen($fileToUpload, "r") or die("Unable to open file!");
             fclose($myfile);
             
@@ -59,10 +57,15 @@
             //Upload blob
             $blobClient->createBlockBlob($containerName, $fileToUpload, $content);
             header('location: /?containerName='.$containerName);
+            
+        // if (move_uploaded_file($_FILES['images']['tmp_name'], $fileToUpload)) {
 
-        } else {
-            header('location: index.php');
-        }
+        // } else {
+        //     header('location: index.php');
+        // }
+
+    }else{
+        header('location: index.php');
     }
 
 
