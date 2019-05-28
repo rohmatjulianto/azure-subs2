@@ -9,8 +9,8 @@
     use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;    
 
       # Setup a specific instance of an Azure::Storage::Client
-      $connectionString = "DefaultEndpointsProtocol=https;AccountName=".getenv('webphpdicoding').";AccountKey=".getenv('XqioB4CjHItVaf5zSJxDR1tY/8KM/mMWxgzMKDfX5aLma150G/gY7d3YKVldKbQL8jcqfoX1QqZVV/a+dFLnyA==');
-    
+      $connectionString = "DefaultEndpointsProtocol=https;AccountName=webphpdicoding;
+      AccountKey=XqioB4CjHItVaf5zSJxDR1tY/8KM/mMWxgzMKDfX5aLma150G/gY7d3YKVldKbQL8jcqfoX1QqZVV/a+dFLnyA==;EndpointSuffix=core.windows.net";
       // Create blob client.
       $blobClient = BlobRestProxy::createBlobService($connectionString);
       
