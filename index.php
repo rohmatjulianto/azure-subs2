@@ -56,7 +56,7 @@
 
             //Upload blob
             $blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-            header('location: /?containerName='.$containerName);
+            // header('location: /?containerName='.$containerName);
             
         // if (move_uploaded_file($_FILES['images']['tmp_name'], $fileToUpload)) {
 
@@ -65,7 +65,7 @@
         // }
 
     }else{
-        header('location: index.php');
+        // header('location: index.php');
     }
 
 
@@ -108,9 +108,8 @@
                     <?php
                      
 
-                        if(!empty($_GET['containerName'])){
-                            $containerName = $_GET['containerName'];
-
+                        if(isset($_POST['submit'])){
+                            
                             $listBlobsOptions = new ListBlobsOptions();
                         
                             
@@ -149,7 +148,7 @@
     $( "#output" ).hide();
 </script>
     <?php
-        if (!empty($_GET['containerName'])) {
+        if (isset($_POST['submit'])) {
     ?>
         <script type="text/javascript">
            $( "#output" ).show();
