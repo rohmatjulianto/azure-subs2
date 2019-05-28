@@ -58,7 +58,7 @@
 
             //Upload blob
             $blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-            header('location: index.php?containerName='.$containerName);
+            header('location: /?containerName='.$containerName);
 
         } else {
             header('location: index.php');
